@@ -1,7 +1,7 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Create a matrix that will cache its inverse.
+## Create a matrix wrapping function ("object") that will cache the matrix's inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
     inverse <- NULL
@@ -25,10 +25,13 @@ makeCacheMatrix <- function(x = matrix()) {
 cacheSolve <- function(x, ...) {
     inverse <- x$getinverse()
     if (!is.null(inverse)) {
+        # inverse has been calculated already
         return(inverse)
     }
     data <- x$get()
+    # actual solving
     inverse <- solve(data)
+    # save inverse
     x$setinverse(inverse)
     inverse
 }
