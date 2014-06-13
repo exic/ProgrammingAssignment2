@@ -1,6 +1,3 @@
-## Put comments here that give an overall description of what your
-## functions do
-
 ## Create a matrix wrapping function ("object") that will cache the matrix's inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
